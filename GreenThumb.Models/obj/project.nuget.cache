@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "MYDbdpVg9OS867nTcvFwujfs1BFyNgOHMMO2mqDpxKSIXb0+bPY5azl7EFLX/TG2Pmi8JJWd1yMMeIdjE/B7Xw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tristan\\source\\repos\\GreenThumb.WebMVC\\GreenThumb.Models\\GreenThumb.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tristan\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
+    "C:\\Users\\Tristan\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
+    "C:\\Users\\Tristan\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.3\\microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

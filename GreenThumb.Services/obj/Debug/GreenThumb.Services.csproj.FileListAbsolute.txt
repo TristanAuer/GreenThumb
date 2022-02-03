@@ -1,0 +1,11 @@
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\bin\Debug\GreenThumb.Services.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\bin\Debug\GreenThumb.Services.pdb
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\bin\Debug\EntityFramework.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\obj\Debug\GreenThumb.Services.csproj.AssemblyReference.cache
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\obj\Debug\GreenThumb.Services.csproj.CoreCompileInputs.cache
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\obj\Debug\GreenThumb.Services.csproj.CopyComplete
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\obj\Debug\GreenThumb.Services.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Services\obj\Debug\GreenThumb.Services.pdb
