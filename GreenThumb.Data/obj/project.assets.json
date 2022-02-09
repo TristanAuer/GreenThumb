@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
-      "EntityFramework/6.1.0": {
+      "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
@@ -40,7 +40,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
-      "EntityFramework/6.1.0": {
+      "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
@@ -78,7 +78,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
-      "EntityFramework/6.1.0": {
+      "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
@@ -116,7 +116,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
-      "EntityFramework/6.1.0": {
+      "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
@@ -155,17 +155,17 @@
     }
   },
   "libraries": {
-    "EntityFramework/6.1.0": {
-      "sha512": "u/M0OEfqxTUsL5BwzD66eBGm278/ozqdLK3JvMO6QwUxxc+z7ZUkTYm4suDhWRqzkc6mOhvXDQY5dZUwbldxyQ==",
+    "EntityFramework/6.2.0": {
+      "sha512": "ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
       "type": "package",
-      "path": "entityframework/6.1.0",
+      "path": "entityframework/6.2.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "content/App.config.transform",
-        "content/Web.config.transform",
-        "entityframework.6.1.0.nupkg.sha512",
+        "content/net40/App.config.transform",
+        "content/net40/Web.config.transform",
+        "entityframework.6.2.0.nupkg.sha512",
         "entityframework.nuspec",
         "lib/net40/EntityFramework.SqlServer.dll",
         "lib/net40/EntityFramework.SqlServer.xml",
@@ -214,6 +214,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
+      "EntityFramework >= 6.2.0",
       "Microsoft.AspNet.Identity.EntityFramework >= 2.2.3"
     ]
   },
@@ -255,6 +256,10 @@
     "frameworks": {
       "net472": {
         "dependencies": {
+          "EntityFramework": {
+            "target": "Package",
+            "version": "[6.2.0, )"
+          },
           "Microsoft.AspNet.Identity.EntityFramework": {
             "target": "Package",
             "version": "[2.2.3, )"

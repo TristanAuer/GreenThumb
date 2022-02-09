@@ -56,8 +56,8 @@ namespace GreenThumb.WebMVC
             {
                 RequiredLength = 6,
                 RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
+                RequireDigit = false,
+                RequireLowercase = false,
                 RequireUppercase = true,
             };
 

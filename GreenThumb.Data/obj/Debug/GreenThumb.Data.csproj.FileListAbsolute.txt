@@ -9,3 +9,5 @@ C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenT
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.csproj.CopyComplete
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.pdb
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.Migrations.initialdatabasemigration.resources
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.csproj.GenerateResource.cache
