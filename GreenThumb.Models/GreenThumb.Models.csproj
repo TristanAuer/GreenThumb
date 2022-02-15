@@ -41,17 +41,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Garden\GardenCreate.cs" />
+    <Compile Include="Garden\GardenEdit.cs" />
+    <Compile Include="Garden\GardenList.cs" />
+    <Compile Include="MessageBoard\MessageBoardCreate.cs" />
+    <Compile Include="MessageBoard\MessageBoardEdit.cs" />
+    <Compile Include="MessageBoard\MessageBoardList.cs" />
     <Compile Include="Profile\ProfileCreate.cs" />
     <Compile Include="Profile\ProfileEdit.cs" />
+    <Compile Include="Profile\ProfileList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplyMB\ReplyMBCreate.cs" />
+    <Compile Include="ReplyMB\ReplyMBEdit.cs" />
+    <Compile Include="ReplyMB\ReplyMBList.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework">
       <Version>2.2.3</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Garden\" />
+    <ProjectReference Include="..\GreenThumb.Data\GreenThumb.Data.csproj">
+      <Project>{0C803992-F296-4F79-98E1-4C76413BD718}</Project>
+      <Name>GreenThumb.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,6 +4,8 @@ C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Models\bin\Debug\Enti
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Models\bin\Debug\EntityFramework.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Models\bin\Debug\GreenThumb.Data.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Models\bin\Debug\GreenThumb.Data.pdb
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Models\obj\Debug\GreenThumb.Models.csproj.AssemblyReference.cache
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Models\obj\Debug\GreenThumb.Models.csproj.CoreCompileInputs.cache
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Models\obj\Debug\GreenThumb.Models.csproj.CopyComplete

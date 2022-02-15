@@ -1,5 +1,3 @@
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.AssemblyReference.cache
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.CoreCompileInputs.cache
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.WebMVC.dll.config
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.WebMVC.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.WebMVC.pdb
@@ -109,6 +107,8 @@ C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.AssemblyReference.cache
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.CoreCompileInputs.cache
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.CopyComplete
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.pdb

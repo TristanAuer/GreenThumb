@@ -41,12 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageBoardService.cs" />
+    <Compile Include="ProfileService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework">
       <Version>2.2.3</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GreenThumb.Data\GreenThumb.Data.csproj">
+      <Project>{0c803992-f296-4f79-98e1-4c76413bd718}</Project>
+      <Name>GreenThumb.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GreenThumb.Models\GreenThumb.Models.csproj">
+      <Project>{b84510cf-d2f2-4051-a111-71c5db9803c6}</Project>
+      <Name>GreenThumb.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

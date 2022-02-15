@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
-      "EntityFramework/6.1.0": {
+      "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
@@ -36,11 +36,25 @@
         },
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
+        }
+      },
+      "GreenThumb.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Microsoft.AspNet.Identity.EntityFramework": "2.2.3"
+        },
+        "compile": {
+          "bin/placeholder/GreenThumb.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GreenThumb.Data.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
-      "EntityFramework/6.1.0": {
+      "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
@@ -74,11 +88,25 @@
         },
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
+        }
+      },
+      "GreenThumb.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Microsoft.AspNet.Identity.EntityFramework": "2.2.3"
+        },
+        "compile": {
+          "bin/placeholder/GreenThumb.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GreenThumb.Data.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
-      "EntityFramework/6.1.0": {
+      "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
@@ -112,11 +140,25 @@
         },
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
+        }
+      },
+      "GreenThumb.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Microsoft.AspNet.Identity.EntityFramework": "2.2.3"
+        },
+        "compile": {
+          "bin/placeholder/GreenThumb.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GreenThumb.Data.dll": {}
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
-      "EntityFramework/6.1.0": {
+      "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
@@ -150,22 +192,36 @@
         },
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
+        }
+      },
+      "GreenThumb.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Microsoft.AspNet.Identity.EntityFramework": "2.2.3"
+        },
+        "compile": {
+          "bin/placeholder/GreenThumb.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GreenThumb.Data.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "EntityFramework/6.1.0": {
-      "sha512": "u/M0OEfqxTUsL5BwzD66eBGm278/ozqdLK3JvMO6QwUxxc+z7ZUkTYm4suDhWRqzkc6mOhvXDQY5dZUwbldxyQ==",
+    "EntityFramework/6.2.0": {
+      "sha512": "ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
       "type": "package",
-      "path": "entityframework/6.1.0",
+      "path": "entityframework/6.2.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "content/App.config.transform",
-        "content/Web.config.transform",
-        "entityframework.6.1.0.nupkg.sha512",
+        "content/net40/App.config.transform",
+        "content/net40/Web.config.transform",
+        "entityframework.6.2.0.nupkg.sha512",
         "entityframework.nuspec",
         "lib/net40/EntityFramework.SqlServer.dll",
         "lib/net40/EntityFramework.SqlServer.xml",
@@ -210,10 +266,16 @@
         "microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512",
         "microsoft.aspnet.identity.entityframework.nuspec"
       ]
+    },
+    "GreenThumb.Data/1.0.0": {
+      "type": "project",
+      "path": "../GreenThumb.Data/GreenThumb.Data.csproj",
+      "msbuildProject": "../GreenThumb.Data/GreenThumb.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
+      "GreenThumb.Data >= 1.0.0",
       "Microsoft.AspNet.Identity.EntityFramework >= 2.2.3"
     ]
   },
@@ -248,7 +310,11 @@
       },
       "frameworks": {
         "net472": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Tristan\\source\\repos\\GreenThumb.WebMVC\\GreenThumb.Data\\GreenThumb.Data.csproj": {
+              "projectPath": "C:\\Users\\Tristan\\source\\repos\\GreenThumb.WebMVC\\GreenThumb.Data\\GreenThumb.Data.csproj"
+            }
+          }
         }
       }
     },
