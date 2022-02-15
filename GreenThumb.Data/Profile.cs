@@ -14,16 +14,17 @@ namespace GreenThumb.Data
         [Key]
         [Display (Name = "ProfileId")]
         public int ProfileId { get; set; }
+        [Required]
         public Guid UserId { get; set; }
-        [ForeignKey(nameof(MessageBoard))]
-        
-        public virtual ICollection<MessageBoard> MessageBoard { get; set; }
-
-        [ForeignKey(nameof(GardenTable))]
-        public virtual ICollection<GardenTable> GardenTable { get; set; }
         public byte UserPhoto { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset ModifiedUtc { get; set; }
+
+        [ForeignKey(nameof(MessageBoard))]
+        public virtual ICollection<MessageBoard> MessageBoard { get; set; }
+
+        [ForeignKey(nameof(GardenTable))]
+        public virtual ICollection<GardenTable> GardenTable { get; set; }
     }
 }

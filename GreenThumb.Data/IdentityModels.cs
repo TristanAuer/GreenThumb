@@ -62,8 +62,4 @@ namespace GreenThumb.Data
                 HasKey(iur => iur.UserId);
             }
         }
-        
-
-
-    
 }

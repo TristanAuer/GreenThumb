@@ -5,11 +5,10 @@ C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\bin\Debug\Entity
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.csproj.AssemblyReference.cache
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.Migrations.initialdatabasemigration.resources
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.Migrations.messageboardupdatedatabasemigration.resources
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.Migrations.datatableoverhall.resources
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.csproj.GenerateResource.cache
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.csproj.CoreCompileInputs.cache
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.csproj.CopyComplete
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.pdb
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.Migrations.Initial.resources
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.csproj.GenerateResource.cache
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.Data\obj\Debug\GreenThumb.Data.Migrations._2.resources

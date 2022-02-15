@@ -22,10 +22,10 @@ namespace GreenThumb.Data
         public Plants PlantType { get; set; }
         [Required]
         public int PlantCount { get; set; }
-        [ForeignKey(nameof(Profile))]
-        public virtual ICollection<Profile> Profile{ get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset ModifiedUtc { get; set; }
+        [ForeignKey(nameof(Profile))]
+        public virtual ICollection<Profile> Profile { get; set; }
     }
 }

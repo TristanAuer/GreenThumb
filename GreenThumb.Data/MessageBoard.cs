@@ -33,11 +33,13 @@ namespace GreenThumb.Data
         [Display(Name = "Useful")]
         [Range(0, 4)]
         public React Content { get; set; }
-        [ForeignKey(nameof(ReplyMB))]
-        public virtual ICollection<ReplyMB> Reply { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset ModifiedUtc { get; set; }
+        [ForeignKey(nameof(ReplyMB))]
+        public virtual ICollection<ReplyMB> Reply { get; set; }
+        [ForeignKey(nameof(Profile))]
+        public virtual ICollection<Profile> Profile{ get; set; }
 
     }
 }

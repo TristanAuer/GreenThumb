@@ -44,17 +44,13 @@
     <Compile Include="GardenTable.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="MessageBoard.cs" />
-    <Compile Include="Migrations\202202090257353_initial database migration.cs" />
-    <Compile Include="Migrations\202202090257353_initial database migration.Designer.cs">
-      <DependentUpon>202202090257353_initial database migration.cs</DependentUpon>
+    <Compile Include="Migrations\202202150146514_Initial.cs" />
+    <Compile Include="Migrations\202202150146514_Initial.Designer.cs">
+      <DependentUpon>202202150146514_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202101745131_message board update database migration.cs" />
-    <Compile Include="Migrations\202202101745131_message board update database migration.Designer.cs">
-      <DependentUpon>202202101745131_message board update database migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202121937436_data table overhall.cs" />
-    <Compile Include="Migrations\202202121937436_data table overhall.Designer.cs">
-      <DependentUpon>202202121937436_data table overhall.cs</DependentUpon>
+    <Compile Include="Migrations\202202150200597_2.cs" />
+    <Compile Include="Migrations\202202150200597_2.Designer.cs">
+      <DependentUpon>202202150200597_2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Profile.cs" />
@@ -70,14 +66,11 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202090257353_initial database migration.resx">
-      <DependentUpon>202202090257353_initial database migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202150146514_Initial.resx">
+      <DependentUpon>202202150146514_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202101745131_message board update database migration.resx">
-      <DependentUpon>202202101745131_message board update database migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202121937436_data table overhall.resx">
-      <DependentUpon>202202121937436_data table overhall.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202150200597_2.resx">
+      <DependentUpon>202202150200597_2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

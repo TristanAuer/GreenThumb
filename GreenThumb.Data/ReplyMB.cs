@@ -11,19 +11,17 @@ namespace GreenThumb.Data
     public class ReplyMB
     {
 
-        [Key, ForeignKey("MessageBoard")]
+        [Key]
         [Display(Name = "ReplyId")]
         public int ReplyId { get; set; }
         [Required]
         [StringLength(500, ErrorMessage = "Reply value cannot exceed 500 characters. ")]
         public string Reply { get; set; }
-        [ForeignKey(nameof(MessageBoard))]
-        public virtual ICollection<MessageBoard> MessageBoard { get; set; }
-        [Required]
         public byte ReplyPhoto { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset ModifiedUtc { get; set; }
-
+        [ForeignKey(nameof(MessageBoard))]
+        public virtual ICollection<MessageBoard> MessageBoard { get; set; }
     }
 }
