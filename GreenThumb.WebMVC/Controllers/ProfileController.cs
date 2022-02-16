@@ -11,7 +11,7 @@ namespace GreenThumb.WebMVC.Controllers
     public class ProfileController : Controller
     {
        
-        public ActionResult Index()
+        public ActionResult ProfileIndex()
         {
             var model = new ProfileList[0];
             return View(model);

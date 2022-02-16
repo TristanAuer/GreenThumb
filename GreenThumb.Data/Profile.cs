@@ -15,6 +15,8 @@ namespace GreenThumb.Data
         [Display (Name = "ProfileId")]
         public int ProfileId { get; set; }
         [Required]
+        public string UserName { get; set; }
+        [Required]
         public Guid UserId { get; set; }
         public byte UserPhoto { get; set; }
         [Required]

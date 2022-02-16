@@ -28,7 +28,8 @@ namespace GreenThumb.Data
         public string ThreadContent { get; set; }
         [Required]
         public string ThreadTitle { get; set; }
-        public byte ThreadPhoto { get; set; }
+        
+        public byte[] ThreadPhoto { get; set; }
         [Required]
         [Display(Name = "Useful")]
         [Range(0, 4)]

@@ -18,6 +18,5 @@ namespace GreenThumb.Models.Garden
         public Plants PlantType { get; set; }
         [Required]
         public int PlantCount { get; set; }
-        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

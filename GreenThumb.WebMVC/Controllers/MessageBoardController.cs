@@ -15,12 +15,18 @@ namespace GreenThumb.WebMVC.Controllers
         
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new MessageBoardService(userId);
-            var model = service.GetMessages();
-
-
-            return View(model);
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                var service = new MessageBoardService(userId);
+                var model = service.GetMessages();
+                return View(model);
+            }
+            else
+            {
+                var model = new MessageBoardList[0];
+                return View(model);
+            }
         }
         // GET: MessageBoard
         [Authorize]
@@ -32,18 +38,51 @@ namespace GreenThumb.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(MessageBoardCreate model)
         {
-            if (ModelState.IsValid)
+            //HttpPostedFileBase file = Request.Files["ImageData"];
+            //MessageBoardService service = new ApplicationDbContext();
+            //int i = service.UploadImageInDataBase(file, model);
             {
+
+                if (!ModelState.IsValid)
+                {
+                    return View(model);
+                }
+                var service = CreateMessageBoardService();
+
+                if (service.CreateMessageBoard(model))
+                {
+                    TempData["SaveResult"] = "Your MessageBoard was created.";
+                    return RedirectToAction("Index");
+                };
+                ModelState.AddModelError("", "Message Board could not be created.");
                 return View(model);
+
             }
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new MessageBoardService(userId);
-
-            service.CreateMessageBoard(model);
-
-            return RedirectToAction("Index");
-
         }
+        //[Route("Create")]
+
+
+
+        //[HttpPost]
+        //public ActionResult Create(MessageBoardCreate model)
+        //{
+        //    HttpPostedFileBase file = Request.Files["ImageData"];
+        //    mess service = new ContentRepository();
+        //    int i = service.UploadImageInDataBase(file, model);
+        //    if (i == 1)
+        //    {
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(model);
+        //}
+        private MessageBoardService CreateMessageBoardService()
+        {
+             var userId = Guid.Parse(User.Identity.GetUserId());
+             var service = new MessageBoardService(userId);
+             return service;
+        }
+        
     }
+    
 
 }

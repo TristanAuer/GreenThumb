@@ -16,7 +16,6 @@ namespace GreenThumb.Models.ReplyMB
 
         [Required]
         public byte ReplyPhoto { get; set; }
-        [Required]
         public DateTimeOffset ModifiedUtc { get; set; }
     }
 }

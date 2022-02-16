@@ -9,7 +9,7 @@ namespace GreenThumb.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(GreenThumb.Data.ApplicationDbContext context)

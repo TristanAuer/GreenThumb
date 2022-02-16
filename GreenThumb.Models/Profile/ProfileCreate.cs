@@ -10,10 +10,13 @@ namespace GreenThumb.Models.Profile
 {
     public class ProfileCreate
     {
-        public DateTimeOffset CreatedUtc { get; set; }
-        public string ThreadTitle { get; set; }
-        public byte ThreadPhoto { get; set; }
+        [Required]
+        public int ProfileId { get; set; }
+
+        [Required]
+        [Display(Name ="0-4 Reaction")]
         public React Content { get; set; }
         public byte UserPhoto { get; set; }
+
     }
 }

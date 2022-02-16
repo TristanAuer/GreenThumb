@@ -25,7 +25,7 @@
                     <li>@Html.ActionLink("Message Board", "Index", "MessageBoard")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Profile", "Index", "Profile")</li>
+                        <li>@Html.ActionLink("Profile", "ProfileIndex", "Profile")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>

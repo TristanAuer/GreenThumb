@@ -18,7 +18,8 @@ namespace GreenThumb.Models.MessageBoard
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(100, ErrorMessage = "There are too many character in this field.")]
         public string ThreadTitle { get; set; }
-        public byte ThreadPhoto { get; set; }
-        public DateTimeOffset CreatedUtc { get; set; }
+        public byte[] ThreadPhoto { get; set; }
+        public React Content { get; set; }
+
     }
 }

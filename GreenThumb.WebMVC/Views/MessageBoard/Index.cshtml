@@ -9,8 +9,19 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+    </div> 
+}
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ThreadId)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.ThreadTitle)
         </th>
@@ -29,10 +40,20 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.ThreadId)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.ThreadTitle)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ThreadPhoto)
+            @if (item.ThreadPhoto == null)
+            {
+                <img src="@item.ThreadPhoto" alt="" height=100 width=200 />
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.ThreadPhoto)
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ThreadContent)

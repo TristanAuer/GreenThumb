@@ -14,9 +14,6 @@ namespace GreenThumb.Models.ReplyMB
         [StringLength(500, ErrorMessage = "Reply value cannot exceed 500 characters. ")]
         public string Reply { get; set; }
 
-        [Required]
         public byte ReplyPhoto { get; set; }
-        [Required]
-        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

@@ -31,10 +31,10 @@ namespace GreenThumb.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<MessageBoard> MessageBoards { get; set; }
-        public DbSet<GardenTable> GardenTables { get; set; }
-        public DbSet<Profile> Profiles { get; set; }
-        public DbSet<ReplyMB> Replys { get; set; }
+        public DbSet<MessageBoard> MessageBoard { get; set; }
+        public DbSet<GardenTable> GardenTable { get; set; }
+        public DbSet<Profile> Profile { get; set; }
+        public DbSet<ReplyMB> ReplyMB { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

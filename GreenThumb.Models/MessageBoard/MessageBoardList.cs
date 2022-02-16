@@ -12,7 +12,7 @@ namespace GreenThumb.Models.MessageBoard
     {
         public Guid ThreadId { get; set; }
         public string ThreadTitle { get; set; }
-        public byte ThreadPhoto { get; set; }
+        public byte[] ThreadPhoto { get; set; }
         public React Content { get; set; }
         public string ThreadContent { get; set; }
         [Display(Name = "Created")]
