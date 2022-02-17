@@ -242,6 +242,8 @@
     <Content Include="Views\MessageBoard\Index.cshtml" />
     <Content Include="Views\MessageBoard\Create.cshtml" />
     <Content Include="Views\MessageBoard\Details.cshtml" />
+    <Content Include="Views\MessageBoard\Edit.cshtml" />
+    <Content Include="Views\MessageBoard\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

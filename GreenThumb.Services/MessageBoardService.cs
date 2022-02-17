@@ -65,13 +65,14 @@ namespace GreenThumb.Services
         //}
 
         //UpdateMessageboard
-        public bool UpdateNote(MessageBoardEdit model)
+        public bool UpdateMessageBoard(MessageBoardEdit model)
         {
             using(var ctx = new ApplicationDbContext())
             {
                 var entity = ctx
                     .MessageBoard
                     .Single(e => e.ThreadId == model.ThreadId && e.UserID == _userId);
+                //entity.ThreadId = model.ThreadId;
                 entity.ThreadContent = model.ThreadContent;
                 entity.ThreadTitle = model.ThreadTitle;
                 entity.ThreadPhoto = model.ThreadPhoto;
@@ -108,14 +109,14 @@ namespace GreenThumb.Services
         }
 
         //Get Messages by Id
-        public MessageBoardDetail GetByThreadId(Guid ThreadId)
+        public MessageBoardDetail GetByThreadId(Guid Id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .MessageBoard
-                        .Single(e => e.ThreadId == ThreadId && e.UserID == _userId);
+                        .Single(e => e.ThreadId == Id && e.UserID == _userId);
                         return new MessageBoardDetail
                         {
                             ThreadId = entity.ThreadId,
@@ -126,6 +127,20 @@ namespace GreenThumb.Services
                             CreatedUtc = entity.CreatedUtc
                         };
 
+            }
+        }
+
+        //delete
+        public bool DeleteMessageBoard(Guid ThreadId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .MessageBoard
+                    .Single(e => e.ThreadId == ThreadId && e.UserID == _userId);
+                ctx.MessageBoard.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

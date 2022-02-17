@@ -60,7 +60,7 @@ namespace GreenThumb.WebMVC.Controllers
             }
         }
 
-        //details
+        //Details
 
         public ActionResult Details(Guid Id)
         {
@@ -70,20 +70,67 @@ namespace GreenThumb.WebMVC.Controllers
             return View(model);
         }
 
-
-
         //Edit
-        //public ActionResult Edit(int id)
-        //{
-        //    var service = CreateMessageBoardService();
-        //    var detail = service.GetByThreadId(id);
-        //    var model = new MessageBoardEdit
-        //    {
-        //        ThreadId = Detail.
-        //    }
-        //}
+        public ActionResult Edit(Guid id)
+        {
+            var service = CreateMessageBoardService();
+            var detail = service.GetByThreadId(id);
+            var model = new MessageBoardEdit
+            {
+                ThreadId = detail.ThreadId,
+                ThreadTitle = detail.ThreadTitle,
+                ThreadContent = detail.ThreadContent,
+                ThreadPhoto = detail.ThreadPhoto,
+            };
+            return View(model);
+        }
 
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Guid ThreadId, MessageBoardEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.ThreadId != ThreadId)
+            {
+
+                ModelState.AddModelError("", "Id Missmatch");
+                return View(model);
+            }
+            var service = CreateMessageBoardService();
+
+            if (service.UpdateMessageBoard(model))
+            {
+                TempData["SaveResult"] = "Your Message Board was created.";
+                return RedirectToAction("Index");
+            };
+            ModelState.AddModelError("", "Message Board could not be created.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete (Guid Id)
+        {
+            var svc = CreateMessageBoardService();
+            var model = svc.GetByThreadId(Id);
+
+            return View(model);
+        }
+
+
+        //delete post
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(Guid Id)
+        {
+            var service = CreateMessageBoardService();
+            service.DeleteMessageBoard(Id);
+            TempData["SaveResult"] = "Your Message Board was Deleted";
+            return RedirectToAction("Index");
+        }
         //[Route("Create")]
 
 
