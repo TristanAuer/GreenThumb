@@ -44,25 +44,9 @@
     <Compile Include="GardenTable.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="MessageBoard.cs" />
-    <Compile Include="Migrations\202202152035077_InitialMigration.cs" />
-    <Compile Include="Migrations\202202152035077_InitialMigration.Designer.cs">
-      <DependentUpon>202202152035077_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202160000386_username.cs" />
-    <Compile Include="Migrations\202202160000386_username.Designer.cs">
-      <DependentUpon>202202160000386_username.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202160144322_usernameconfig.cs" />
-    <Compile Include="Migrations\202202160144322_usernameconfig.Designer.cs">
-      <DependentUpon>202202160144322_usernameconfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202161302578_Bytenullable.cs" />
-    <Compile Include="Migrations\202202161302578_Bytenullable.Designer.cs">
-      <DependentUpon>202202161302578_Bytenullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202161325150_Byte[]update.cs" />
-    <Compile Include="Migrations\202202161325150_Byte[]update.Designer.cs">
-      <DependentUpon>202202161325150_Byte[]update.cs</DependentUpon>
+    <Compile Include="Migrations\202202171540376_inti.cs" />
+    <Compile Include="Migrations\202202171540376_inti.Designer.cs">
+      <DependentUpon>202202171540376_inti.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Profile.cs" />
@@ -78,20 +62,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202152035077_InitialMigration.resx">
-      <DependentUpon>202202152035077_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202160000386_username.resx">
-      <DependentUpon>202202160000386_username.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202160144322_usernameconfig.resx">
-      <DependentUpon>202202160144322_usernameconfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202161302578_Bytenullable.resx">
-      <DependentUpon>202202161302578_Bytenullable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202161325150_Byte[]update.resx">
-      <DependentUpon>202202161325150_Byte[]update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202171540376_inti.resx">
+      <DependentUpon>202202171540376_inti.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

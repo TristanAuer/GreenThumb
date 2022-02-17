@@ -15,13 +15,16 @@ namespace GreenThumb.Data
         [Display(Name = "ReplyId")]
         public int ReplyId { get; set; }
         [Required]
+        public Guid UserID { get; set; }
+        [Required]
         [StringLength(500, ErrorMessage = "Reply value cannot exceed 500 characters. ")]
         public string Reply { get; set; }
-        public byte ReplyPhoto { get; set; }
+        public byte[] ReplyPhoto { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset ModifiedUtc { get; set; }
-        [ForeignKey(nameof(MessageBoard))]
-        public virtual ICollection<MessageBoard> MessageBoard { get; set; }
+        [ForeignKey("MessageBoard")]
+        public Guid ThreadId { get; set; }
+        public virtual MessageBoard MessageBoard { get; set; }
     }
 }

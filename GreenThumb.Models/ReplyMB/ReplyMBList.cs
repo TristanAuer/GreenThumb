@@ -12,8 +12,8 @@ namespace GreenThumb.Models.ReplyMB
         public int ReplyId { get; set; }
         
         public string Reply { get; set; }
+        public Guid ThreadId { get; set; }
 
-     
         public byte ReplyPhoto { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

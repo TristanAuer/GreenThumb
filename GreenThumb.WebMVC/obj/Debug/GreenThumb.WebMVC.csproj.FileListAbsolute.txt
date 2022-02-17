@@ -83,6 +83,8 @@ C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\WebGrease.
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.Data.pdb
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.Models.pdb
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.Services.pdb
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\EntityFramework.xml
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\EntityFramework.SqlServer.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\System.Web.Helpers.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\System.Web.Mvc.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\System.Web.Optimization.xml
@@ -92,8 +94,6 @@ C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\System.Web
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\System.Web.WebPages.Razor.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Newtonsoft.Json.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Antlr3.Runtime.pdb
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\EntityFramework.xml
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\EntityFramework.SqlServer.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml

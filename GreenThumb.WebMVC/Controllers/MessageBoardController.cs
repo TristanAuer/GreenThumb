@@ -51,7 +51,7 @@ namespace GreenThumb.WebMVC.Controllers
 
                 if (service.CreateMessageBoard(model))
                 {
-                    TempData["SaveResult"] = "Your MessageBoard was created.";
+                    TempData["SaveResult"] = "Your Message Board was created.";
                     return RedirectToAction("Index");
                 };
                 ModelState.AddModelError("", "Message Board could not be created.");
@@ -59,6 +59,31 @@ namespace GreenThumb.WebMVC.Controllers
 
             }
         }
+
+        //details
+
+        public ActionResult Details(Guid Id)
+        {
+            var svc = CreateMessageBoardService();
+            var model = svc.GetByThreadId(Id);
+
+            return View(model);
+        }
+
+
+
+        //Edit
+        //public ActionResult Edit(int id)
+        //{
+        //    var service = CreateMessageBoardService();
+        //    var detail = service.GetByThreadId(id);
+        //    var model = new MessageBoardEdit
+        //    {
+        //        ThreadId = Detail.
+        //    }
+        //}
+
+
         //[Route("Create")]
 
 
@@ -75,6 +100,7 @@ namespace GreenThumb.WebMVC.Controllers
         //    }
         //    return View(model);
         //}
+
         private MessageBoardService CreateMessageBoardService()
         {
              var userId = Guid.Parse(User.Identity.GetUserId());

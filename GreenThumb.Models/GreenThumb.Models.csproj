@@ -45,6 +45,7 @@
     <Compile Include="Garden\GardenEdit.cs" />
     <Compile Include="Garden\GardenList.cs" />
     <Compile Include="MessageBoard\MessageBoardCreate.cs" />
+    <Compile Include="MessageBoard\MessageBoardDetail.cs" />
     <Compile Include="MessageBoard\MessageBoardEdit.cs" />
     <Compile Include="MessageBoard\MessageBoardList.cs" />
     <Compile Include="Profile\ProfileCreate.cs" />

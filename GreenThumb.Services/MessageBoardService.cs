@@ -64,6 +64,22 @@ namespace GreenThumb.Services
         //    return imageBytes;
         //}
 
+        //UpdateMessageboard
+        public bool UpdateNote(MessageBoardEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .MessageBoard
+                    .Single(e => e.ThreadId == model.ThreadId && e.UserID == _userId);
+                entity.ThreadContent = model.ThreadContent;
+                entity.ThreadTitle = model.ThreadTitle;
+                entity.ThreadPhoto = model.ThreadPhoto;
+                entity.ModifiedUtc = DateTimeOffset.Now;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
         //Get Messages
         public IEnumerable<MessageBoardList> GetMessages()
@@ -90,6 +106,27 @@ namespace GreenThumb.Services
                 return query.ToArray();
             }
         }
-        
+
+        //Get Messages by Id
+        public MessageBoardDetail GetByThreadId(Guid ThreadId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .MessageBoard
+                        .Single(e => e.ThreadId == ThreadId && e.UserID == _userId);
+                        return new MessageBoardDetail
+                        {
+                            ThreadId = entity.ThreadId,
+                            ThreadTitle = entity.ThreadTitle,
+                            ThreadContent = entity.ThreadContent,
+                            ThreadPhoto = entity.ThreadPhoto,
+                            ModifiedUtc = entity.ModifiedUtc,
+                            CreatedUtc = entity.CreatedUtc
+                        };
+
+            }
+        }
     }
 }
