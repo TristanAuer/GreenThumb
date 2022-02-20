@@ -8,24 +8,30 @@ using System.Threading.Tasks;
 
 namespace GreenThumb.Data
 {
-    public enum Plants { Beets, Carrots, Lettuce, Radish, Artichoke, Arugula, AsianGreens, Asparagus, Beans, Broccoli }
+    public enum Plants { Beets = 0, Carrots = 1, Lettuce = 2, Radish = 3, Artichoke = 4, Arugula = 5, AsianGreens = 6, Asparagus = 7, Beans = 8, Broccoli = 9}
     public class GardenTable
     {
         [Key]
         [Display(Name = "GardenId")]
         public int GardenId { get; set; }
         [Required]
+        public Guid OwnerGUID { get; set; }
+        [Required]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(100, ErrorMessage = "There are too many character in this field.")]
         public string GardenName { get; set; }
-        [Required]
+        [Display(Name ="Plants")]
         public Plants PlantType { get; set; }
-        [Required]
+        
+        public byte[] PlantPhoto { get; set; }
         public int PlantCount { get; set; }
-        [Required]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTimeOffset CreatedUtc { get; set; }
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTimeOffset ModifiedUtc { get; set; }
+
         [ForeignKey(nameof(Profile))]
-        public virtual ICollection<Profile> Profile { get; set; }
+        public int? UserId { get; set; }
+        public virtual Profile Profile { get; set; }
     }
 }

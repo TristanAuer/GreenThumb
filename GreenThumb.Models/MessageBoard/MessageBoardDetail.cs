@@ -10,7 +10,7 @@ namespace GreenThumb.Models.MessageBoard
 {
     public class MessageBoardDetail
     {
-        public Guid ThreadId { get; set; }
+        public int ThreadId { get; set; }
         [Display(Name = "Title")]
         public string ThreadTitle { get; set; }
         [Display(Name = "Photos")]
@@ -23,5 +23,6 @@ namespace GreenThumb.Models.MessageBoard
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Last Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
+
     }
 }

@@ -9,7 +9,8 @@ namespace GreenThumb.Models.MessageBoard
 {
     public class MessageBoardEdit
     {
-        public Guid ThreadId { get; set; }
+        [Required]
+        public int ThreadId { get; set; }
         [Required]
         [MaxLength(8000, ErrorMessage = "Max character count 8000.")]
         [Display(Name = "Content")]

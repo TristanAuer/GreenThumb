@@ -10,20 +10,19 @@ namespace GreenThumb.Data
 {
     public enum React
     {
-        Positive,
-        Negative,
-        Professional,
-        Ammateur,
-        Funny
+        Positive = 0,
+        Negative = 1,
+        Professional = 2,
+        Ammateur = 3,
+        Funny = 4
     }
     public class MessageBoard
     {
 
         [Key]
-        [Display(Name = "ThreadId")]
-        public Guid ThreadId { get; set; }
+        public int ThreadId { get; set; }
         [Required]
-        public Guid UserID { get; set; }
+        public Guid OwnerGUID { get; set; }
         [Required]
         public string ThreadContent { get; set; }
         [Required]
@@ -33,14 +32,17 @@ namespace GreenThumb.Data
         [Required]
         [Display(Name = "Useful")]
         [Range(0, 4)]
-        public React Content { get; set; }
-        [Required]
+        public React ReactionType { get; set; }
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
+        [Display(Name = "Modified")]
         public DateTimeOffset ModifiedUtc { get; set; }
-        [ForeignKey(nameof(ReplyMB))]
-        public virtual ICollection<ReplyMB> Reply { get; set; }
-        [ForeignKey(nameof(Profile))]
-        public virtual ICollection<Profile> Profile{ get; set; }
 
+        public virtual ICollection<ReplyMB> Reply { get; set; }
+
+        [ForeignKey(nameof(Profile))]
+        public int? UserId { get; set; }
+        public virtual Profile Profile { get; set; }
+        
     }
 }

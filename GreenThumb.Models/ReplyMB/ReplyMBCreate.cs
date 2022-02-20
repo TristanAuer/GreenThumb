@@ -5,17 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.ReplyMB
+namespace GreenThumb.Models.ReplyMBmulti
 {
     public class ReplyMBCreate
     {
-        public int ReplyId { get; set; }
+        [Required]
+        public Guid OwnerGUID { get; set; }
         [Required]
         [StringLength(500, ErrorMessage = "Reply value cannot exceed 500 characters. ")]
         public string Reply { get; set; }
-
+        [Required]
+        public int ProfileId { get; set; }
         public byte[] ReplyPhoto { get; set; }
         [Required]
-        public Guid ThreadId { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
+        public int ThreadId { get; set; }
     }
 }

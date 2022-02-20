@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace GreenThumb.Models.MessageBoard
 {
-    public class MessageBoardList
+    public class MessageBoardList 
     {
-        public Guid ThreadId { get; set; }
+        public int ThreadId { get; set; }
         [Display(Name = "Title")]
         public string ThreadTitle { get; set; }
         [Display(Name = "Photos")]

@@ -11,12 +11,15 @@ namespace GreenThumb.Models.Garden
     public class GardenCreate
     {
         [Required]
+        [Display(Name ="Plant Group")]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(100, ErrorMessage = "There are too many character in this field.")]
         public string GardenName { get; set; }
-        [Required]
+        
         public Plants PlantType { get; set; }
-        [Required]
+        [Range(0, int.MaxValue, ErrorMessage = "The quantity must be 0 or more.")]
         public int PlantCount { get; set; }
+        public byte[] PlantPhoto { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

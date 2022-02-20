@@ -14,6 +14,7 @@ namespace GreenThumb.Models.Garden
         public string GardenName { get; set; }
         public Plants PlantType { get; set; }
         public int PlantCount { get; set; }
+        public byte[] PlantPhoto { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset ModifiedUtc { get; set; }

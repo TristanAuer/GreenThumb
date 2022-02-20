@@ -9,12 +9,14 @@ namespace GreenThumb.Models.ReplyMB
 {
     public class ReplyMBList
     {
+        [Display(Name = "ReplyId")]
         public int ReplyId { get; set; }
-        
+        [Display(Name = "Reply")]
         public string Reply { get; set; }
-        public Guid ThreadId { get; set; }
-
-        public byte ReplyPhoto { get; set; }
+        [Display(Name = "Thread")]
+        public int ThreadId { get; set; }
+        [Display(Name = "Photo")]
+        public byte[] ReplyPhoto { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }

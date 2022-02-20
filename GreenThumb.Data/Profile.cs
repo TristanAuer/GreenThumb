@@ -12,21 +12,26 @@ namespace GreenThumb.Data
     {
         
         [Key]
-        [Display (Name = "ProfileId")]
         public int ProfileId { get; set; }
         [Required]
+        public Guid OwnerGUID { get; set; }
+        [Required]
+        [Display(Name = "User Name")]
+        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
+        [MaxLength(100, ErrorMessage = "There are too many character in this field.")]
+        [RegularExpression(@"^\S*$", ErrorMessage = "No white space allowed")]
         public string UserName { get; set; }
+        [Display(Name = "User Picture")]
+        public byte[] UserPhoto { get; set; }
         [Required]
-        public Guid UserId { get; set; }
-        public byte UserPhoto { get; set; }
-        [Required]
+        [Display(Name = "Account Creation Date")]
         public DateTimeOffset CreatedUtc { get; set; }
-        public DateTimeOffset ModifiedUtc { get; set; }
 
-        [ForeignKey(nameof(MessageBoard))]
-        public virtual ICollection<MessageBoard> MessageBoard { get; set; }
+        public virtual ICollection<MessageBoard> MessageBoard { get; set; } = new List<MessageBoard>();
+        public virtual ICollection<GardenTable> GardenTable { get; set; } = new List<GardenTable>();
+        public virtual ICollection<ReplyMB> Reply { get; set; } = new List<ReplyMB>();
 
-        [ForeignKey(nameof(GardenTable))]
-        public virtual ICollection<GardenTable> GardenTable { get; set; }
+
+
     }
 }

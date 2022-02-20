@@ -1,10 +1,9 @@
-﻿using GreenThumb.Models.ReplyMB;
+﻿using GreenThumb.Models.MessageBoard;
+using GreenThumb.Models.ReplyMB;
+using GreenThumb.Models.ReplyMBmulti;
 using GreenThumb.Services;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace GreenThumb.WebMVC.Controllers
@@ -18,7 +17,24 @@ namespace GreenThumb.WebMVC.Controllers
             return View();
         }
 
+        public ActionResult UserMessagesListReply(Guid Id)
+        {
+            var ReplyMBSvc = new ReplyService(Id);
+            var MessageSvc = new MessageBoardService(Id);
+            var model = new ReplyMBmulti();
+            model.RecentReply = (System.Collections.Generic.IEnumerable<GreenThumb.Models.ReplyMB.ReplyMBList>)(System.Collections.Generic.IEnumerable<ReplyMBList>)ReplyMBSvc.RecentReply();
+            model.GetCurrentMessage = (System.Collections.Generic.IEnumerable<GreenThumb.Models.MessageBoard.MessageBoardDetail>)(System.Collections.Generic.IEnumerable<MessageBoardDetail>)MessageSvc.GetCurrentMessage();
 
+            return View(model);
+        }
+        //public ReplyDetail Replys()
+        //{
+        //    var userId = Guid.Parse(User.Identity.GetUserId());
+
+
+        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CreateReply(ReplyMBCreate model)
         {
             if (!ModelState.IsValid)

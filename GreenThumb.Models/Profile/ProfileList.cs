@@ -10,9 +10,11 @@ namespace GreenThumb.Models.Profile
     public class ProfileList
     {
         public int ProfileId { get; set; }
+        public string GardenName { get; set; }
 
-        public byte UserPhoto { get; set; }
+        public byte[] UserPhoto { get; set; }
 
+        public string UserName { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }

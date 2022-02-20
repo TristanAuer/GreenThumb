@@ -3,16 +3,17 @@ using GreenThumb.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace GreenThumb.WebMVC.Controllers
 {
-    
+
     public class MessageBoardController : Controller
     {
-        
+
         public ActionResult Index()
         {
             if (User.Identity.IsAuthenticated)
@@ -38,9 +39,7 @@ namespace GreenThumb.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(MessageBoardCreate model)
         {
-            //HttpPostedFileBase file = Request.Files["ImageData"];
-            //MessageBoardService service = new ApplicationDbContext();
-            //int i = service.UploadImageInDataBase(file, model);
+            
             {
 
                 if (!ModelState.IsValid)
@@ -62,7 +61,7 @@ namespace GreenThumb.WebMVC.Controllers
 
         //Details
 
-        public ActionResult Details(Guid Id)
+        public ActionResult Details(int Id)
         {
             var svc = CreateMessageBoardService();
             var model = svc.GetByThreadId(Id);
@@ -71,7 +70,7 @@ namespace GreenThumb.WebMVC.Controllers
         }
 
         //Edit
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(int id)
         {
             var service = CreateMessageBoardService();
             var detail = service.GetByThreadId(id);
@@ -88,11 +87,11 @@ namespace GreenThumb.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Guid ThreadId, MessageBoardEdit model)
+        public ActionResult Edit(int ThreadId, MessageBoardEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.ThreadId != ThreadId)
+            if (model.ThreadId != ThreadId)
             {
 
                 ModelState.AddModelError("", "Id Missmatch");
@@ -110,7 +109,7 @@ namespace GreenThumb.WebMVC.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult Delete (Guid Id)
+        public ActionResult Delete(int Id)
         {
             var svc = CreateMessageBoardService();
             var model = svc.GetByThreadId(Id);
@@ -124,7 +123,7 @@ namespace GreenThumb.WebMVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(Guid Id)
+        public ActionResult DeletePost(int Id)
         {
             var service = CreateMessageBoardService();
             service.DeleteMessageBoard(Id);
@@ -139,7 +138,7 @@ namespace GreenThumb.WebMVC.Controllers
         //public ActionResult Create(MessageBoardCreate model)
         //{
         //    HttpPostedFileBase file = Request.Files["ImageData"];
-        //    mess service = new ContentRepository();
+        //    Mess Service = new ContentRepository();
         //    int i = service.UploadImageInDataBase(file, model);
         //    if (i == 1)
         //    {
@@ -150,12 +149,60 @@ namespace GreenThumb.WebMVC.Controllers
 
         private MessageBoardService CreateMessageBoardService()
         {
-             var userId = Guid.Parse(User.Identity.GetUserId());
-             var service = new MessageBoardService(userId);
-             return service;
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new MessageBoardService(userId);
+            return service;
         }
-        
-    }
-    
 
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit(MessageBoardEdit model)
+        //{
+        //    if (!ModelState.IsValid) return View(model);
+
+        //    var imageService = CreateImageService();
+        //    if (model.ImageID == -1)
+        //    {
+        //        model.Image = imageService.GetLatestImageForUser();
+
+        //        if (model.Image is null)
+        //        {
+        //            // Invalid, get a default image
+        //            model.Image = imageService.CreateAndReturnRandomImage(false);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        model.Image = imageService.GetImageByID(model.ImageID);
+        //    }
+
+        //    var service = CreatePersonService();
+        //    if (service.UpdatePerson(model))
+        //    {
+        //        TempData["SaveResult"] = "Your person was updated.";
+        //        return RedirectToAction("Index", "Home");
+        //    }
+
+        //    ModelState.AddModelError("", "Your person could not be updated.");
+        //    model.Birthdate = (model.Birthdate is null) ? DateTime.Now : model.Birthdate;
+        //    return View(model);
+        //}
+
+        private ImageService CreateImageService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ImageService(userId);
+            return service;
+        }
+
+        private byte[] ConvertToBytes(HttpPostedFileBase image)
+        {
+            using (var reader = new BinaryReader(image.InputStream))
+            {
+                return reader.ReadBytes(image.ContentLength);
+            }
+        }
+
+    }
 }

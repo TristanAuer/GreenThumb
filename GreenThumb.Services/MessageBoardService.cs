@@ -1,5 +1,7 @@
 ﻿using GreenThumb.Data;
+using GreenThumb.Models;
 using GreenThumb.Models.MessageBoard;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,15 +19,13 @@ namespace GreenThumb.Services
         }
         public bool CreateMessageBoard(MessageBoardCreate model)
         {
-            
             var entity =
                 new MessageBoard()
                 {
-                    ThreadId = Guid.NewGuid(),
-                    UserID = _userId,
+                    //ThreadId = int.(),
                     ThreadTitle = model.ThreadTitle,
                     ThreadContent = model.ThreadContent,
-                    ThreadPhoto = model.ThreadPhoto,
+                    //ThreadPhoto = CreateDefaultImageModel().ImageData,
                     CreatedUtc = DateTimeOffset.Now,
                 };
             using (var ctx = new ApplicationDbContext())
@@ -34,6 +34,189 @@ namespace GreenThumb.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        
+
+        //UpdateMessageboard
+        public bool UpdateMessageBoard(MessageBoardEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+
+                var entity = ctx
+                    .MessageBoard
+                    .Single(e => e.ThreadId == model.ThreadId);
+                entity.ThreadId = model.ThreadId;
+                entity.ThreadContent = model.ThreadContent;
+                entity.ThreadTitle = model.ThreadTitle;
+                entity.ThreadPhoto = model.ThreadPhoto;
+                entity.ModifiedUtc = DateTimeOffset.Now;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        //Get Messages
+        public IEnumerable<MessageBoardList> GetMessages()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .MessageBoard
+                        .Select(
+                            e =>
+                            new MessageBoardList
+                            {
+                                ThreadId = e.ThreadId,
+                                ThreadTitle = e.ThreadTitle,
+                                ThreadContent = e.ThreadContent,
+                                ThreadPhoto = e.ThreadPhoto,
+                                //Content = e.Content,
+                                CreatedUtc = e.CreatedUtc,
+
+                            }
+                        );
+                return query.ToArray();
+            }
+        }
+        //Get Current messages
+        public MessageBoardDetail GetCurrentMessage()
+        {
+            return GetByThreadGUID(_userId);
+        }
+
+        public MessageBoardDetail GetByThreadGUID(Guid guid)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                if(!ctx.MessageBoard.Any(e => e.OwnerGUID == guid))
+                {
+                    return null;
+                }
+                var entity = ctx
+                    .MessageBoard
+                    .Single(e => e.OwnerGUID == guid);
+                return
+                    new MessageBoardDetail
+                    {
+                        ThreadId = entity.ThreadId,
+                        ThreadTitle = entity.ThreadTitle,
+                        ThreadContent = entity.ThreadContent,
+                        //ThreadPhoto = (entity.ThreadPhoto == null || entity.ThreadPhoto.Length ==0) ? CreateImagemodel() 
+                    };
+
+            }
+        }
+
+
+        //Get Messages by Id
+        public MessageBoardDetail GetByThreadId(int Id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                if (!ctx.MessageBoard.Any(e => e.ThreadId == Id))
+                {
+                    return null;
+                }
+                var entity =
+                    ctx
+                        .MessageBoard
+                        .Single(e => e.ThreadId == Id);
+                return new MessageBoardDetail
+                {
+                    ThreadId = entity.ThreadId,
+                    ThreadTitle = entity.ThreadTitle,
+                    ThreadContent = entity.ThreadContent,
+                    ThreadPhoto = entity.ThreadPhoto,
+                    ModifiedUtc = entity.ModifiedUtc,
+                    CreatedUtc = entity.CreatedUtc
+                };
+
+            }
+        }
+
+        //delete
+        public bool DeleteMessageBoard(int Id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .MessageBoard
+                    .Single(e => e.ThreadId == Id);
+                ctx.MessageBoard.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
+
+        //public IEnumerable<MessageBoardList> GetThreadSearchString(string input)
+        //{
+
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+
+        //        // If the user has a Person associated with them, filter out any Friends from the list of Strangers
+        //        if (ctx.MessageBoard.Any(p => p.OwnerGUID == _userId) && ctx.ReplyMB.Any(f => f.OwnerGUID == _userId))
+        //        {
+        //            var Thread = ctx.MessageBoard.Where(e => e.OwnerGUID != _userId &&
+        //                                                !ctx.ReplyMB.Any(f => f.OwnerGUID == _userId && f.ReplyId == e.ThreadId) 
+        //                                                && ( e.ModifiedUtc)
+
+        //                                        .DateTime latestDate = myCollection.Where(r => r.ExpirationDate.HasValue)
+        //                          .Max(r => r.ExpirationDate)
+        //                                        .Select(e =>
+        //                                                    new PersonListItem_Stranger
+        //                                                    {
+        //                                                        PersonID = e.PersonID,
+        //                                                        FullName = e.FirstName + " " + e.LastName,
+        //                                                        ProfilePicture = e.ProfilePicture
+        //                                                    }
+        //                                        );
+
+        //            return strangers.ToArray();
+        //        }
+
+        //        var query = ctx.People.Where(e => e.PersonGUID != _userId &&
+        //                                    (e.FirstName.ToLower().Contains(input.ToLower()) || e.LastName.ToLower().Contains(input.ToLower())))
+        //                                .OrderBy(f => f.LastName)
+        //                                .ThenBy(f => f.FirstName)
+        //                                .Select(e =>
+        //                                        new PersonListItem_Stranger
+        //                                        {
+        //                                            PersonID = e.PersonID,
+        //                                            FullName = e.FirstName + " " + e.LastName,
+        //                                            ProfilePicture = e.ProfilePicture
+        //                                        }
+        //                                );
+
+        //        return query.ToArray();
+        //    }
+        //}
+        private ImageService CreateImageService()
+        {
+            var service = new ImageService(_userId);
+            return service;
+        }
+
+
+        private ImageModel CreateImageModelForBytes(byte[] input)
+        {
+            var service = CreateImageService();
+
+            service.DeleteImagesForUser();
+
+            var model = new ImageModel();
+            model.ImageData = input;
+            model.OwnerGUID = _userId;
+
+            if (!service.CreateImage(model))
+                return null;
+
+            return service.GetLatestImageForUser();
+        }
+
         //private readonly ApplicationDbContext db = new ApplicationDbContext();
         //public int UploadImageInDataBase(HttpPostedFileBase file, ContentViewModel contentViewModel)
         //{
@@ -63,85 +246,5 @@ namespace GreenThumb.Services
         //    imageBytes = reader.ReadBytes((int)image.ContentLength);
         //    return imageBytes;
         //}
-
-        //UpdateMessageboard
-        public bool UpdateMessageBoard(MessageBoardEdit model)
-        {
-            using(var ctx = new ApplicationDbContext())
-            {
-                var entity = ctx
-                    .MessageBoard
-                    .Single(e => e.ThreadId == model.ThreadId && e.UserID == _userId);
-                //entity.ThreadId = model.ThreadId;
-                entity.ThreadContent = model.ThreadContent;
-                entity.ThreadTitle = model.ThreadTitle;
-                entity.ThreadPhoto = model.ThreadPhoto;
-                entity.ModifiedUtc = DateTimeOffset.Now;
-
-                return ctx.SaveChanges() == 1;
-            }
-        }
-
-        //Get Messages
-        public IEnumerable<MessageBoardList> GetMessages()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query =
-                    ctx
-                        .MessageBoard
-                        .Where(e => e.UserID == _userId)
-                        .Select(
-                            e =>
-                            new MessageBoardList
-                            {
-                                ThreadId = e.ThreadId,
-                                ThreadTitle = e.ThreadTitle,
-                                ThreadContent = e.ThreadContent,
-                                ThreadPhoto = e.ThreadPhoto,
-                                Content = e.Content,
-                                CreatedUtc = e.CreatedUtc,
-
-                            }
-                        );
-                return query.ToArray();
-            }
-        }
-
-        //Get Messages by Id
-        public MessageBoardDetail GetByThreadId(Guid Id)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                        .MessageBoard
-                        .Single(e => e.ThreadId == Id && e.UserID == _userId);
-                        return new MessageBoardDetail
-                        {
-                            ThreadId = entity.ThreadId,
-                            ThreadTitle = entity.ThreadTitle,
-                            ThreadContent = entity.ThreadContent,
-                            ThreadPhoto = entity.ThreadPhoto,
-                            ModifiedUtc = entity.ModifiedUtc,
-                            CreatedUtc = entity.CreatedUtc
-                        };
-
-            }
-        }
-
-        //delete
-        public bool DeleteMessageBoard(Guid ThreadId)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity = ctx
-                    .MessageBoard
-                    .Single(e => e.ThreadId == ThreadId && e.UserID == _userId);
-                ctx.MessageBoard.Remove(entity);
-
-                return ctx.SaveChanges() == 1;
-            }
-        }
     }
 }

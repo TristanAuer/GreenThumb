@@ -1,5 +1,6 @@
 ﻿using GreenThumb.Data;
 using GreenThumb.Models.ReplyMB;
+using GreenThumb.Models.ReplyMBmulti;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,10 @@ namespace GreenThumb.Services
             var entity =
                 new ReplyMB()
                 {
-                    ReplyId = model.ReplyId,
-                    UserID = _userId,
                     Reply = model.Reply,
-                    ReplyPhoto = model.ReplyPhoto, 
+                    ReplyPhoto = model.ReplyPhoto,
                     CreatedUtc = DateTimeOffset.Now,
-                    ThreadId = model.ThreadId
+
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -35,7 +34,7 @@ namespace GreenThumb.Services
             }
         }
 
-        public IEnumerable<ReplyMBList> GetReplyByThreadId(Guid ThreadId)
+        public IEnumerable<ReplyMBList> ListReplyByThreadId(int ThreadId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -47,14 +46,22 @@ namespace GreenThumb.Services
                         e =>
                         new ReplyMBList
                         {
-                        ThreadId = e.ThreadId,
-                        Reply = e.Reply,
-                        ReplyId = e.ReplyId,
-                        //ReplyPhoto = e.ReplyPhoto,
-                        CreatedUtc = e.CreatedUtc,
+                            Reply = e.Reply,
+                            ReplyId = e.ReplyId,
+                            ReplyPhoto = e.ReplyPhoto,
+                            CreatedUtc = e.CreatedUtc,
                         });
                 return query.ToArray();
-                   
+
+            }
+        }
+        public IEnumerable<ReplyMB> RecentReply()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                
+                var query = ctx.ReplyMB.OrderBy(p => p.CreatedUtc);
+                return query.ToArray();
             }
         }
     }

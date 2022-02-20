@@ -169,7 +169,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BashboardController.cs" />
+    <Compile Include="Controllers\GardenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessageBoardController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -194,6 +197,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\GreenThumbWebMVC2022 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\GreenThumbWebMVC20220219120311 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -244,10 +248,16 @@
     <Content Include="Views\MessageBoard\Details.cshtml" />
     <Content Include="Views\MessageBoard\Edit.cshtml" />
     <Content Include="Views\MessageBoard\Delete.cshtml" />
+    <Content Include="Views\Garden\Index.cshtml" />
+    <Content Include="Views\Garden\Create.cshtml" />
+    <Content Include="Views\Garden\Delete.cshtml" />
+    <Content Include="Views\Garden\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Reply\" />
+    <Folder Include="Views\Bashboard\" />
+    <Folder Include="Views\Image\" />
+    <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

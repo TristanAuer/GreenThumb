@@ -15,9 +15,13 @@ namespace GreenThumb.Models.Garden
         [MaxLength(100, ErrorMessage = "There are too many character in this field.")]
         public string GardenName { get; set; }
         [Required]
+        public int GardenId { get; set; }
+        
         public Plants PlantType { get; set; }
-        [Required]
+        
+        public byte[] PlantPhoto { get; set; }
         public int PlantCount { get; set; }
-        public DateTimeOffset ModifiedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
+        
     }
 }
