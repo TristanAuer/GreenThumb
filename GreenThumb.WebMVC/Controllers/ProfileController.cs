@@ -1,4 +1,4 @@
-﻿using GreenThumb.Models.Profile;
+﻿using GreenThumb.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;

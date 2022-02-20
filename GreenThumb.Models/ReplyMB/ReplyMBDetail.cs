@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.ReplyMBmulti
+namespace GreenThumb.Models
 {
-    public class ReplyDetail
+    public class ReplyMBDetail
     {
         [Required]
         public Guid OwnerGUID { get; set; }
@@ -17,11 +17,11 @@ namespace GreenThumb.Models.ReplyMBmulti
         public string Reply { get; set; }
         [Required]
         public int ProfileId { get; set; }
-        //public Profile Profile { get; set; }
+        //ublic Profile Profile { get; set; }
         public byte[] ReplyPhoto { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public int ThreadId { get; set; }
-        //public MessageBoard MessageBoard { get; set; }
+        public MessageBoard MessageBoard { get; set; }
     }
 }

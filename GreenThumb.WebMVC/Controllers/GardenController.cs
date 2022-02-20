@@ -1,4 +1,4 @@
-﻿using GreenThumb.Models.Garden;
+﻿using GreenThumb.Models;
 using GreenThumb.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -65,7 +65,7 @@ namespace GreenThumb.WebMVC.Controllers
             return service;
         }
 
-        public ActionResult EditGarden(int id)
+        public ActionResult Edit(int id)
         {
             var service = CreateGardenidentitylogic();
             var detail= service.GetByGardenId(id);
@@ -75,21 +75,23 @@ namespace GreenThumb.WebMVC.Controllers
                 PlantType = detail.PlantType,
                 PlantCount = detail.PlantCount,
                 //PlantPhoto = detail.PlantPhoto  
-
+                ModifiedUtc = detail.ModifiedUtc
             };
             return View(model);
 
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( GardenEdit model)
+        public ActionResult Edit(int GardenId, GardenEdit model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.GardenId != GardenId)
             {
+
                 ModelState.AddModelError("", "Id Missmatch");
                 return View(model);
             }
-
             var service = CreateGardenidentitylogic();
 
             if (service.UpdateGarden(model))

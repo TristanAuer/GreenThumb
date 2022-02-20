@@ -45,6 +45,10 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Images.cs" />
     <Compile Include="MessageBoard.cs" />
+    <Compile Include="Migrations\202202202259461_init.cs" />
+    <Compile Include="Migrations\202202202259461_init.Designer.cs">
+      <DependentUpon>202202202259461_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +61,11 @@
     <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework">
       <Version>2.2.3</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202202259461_init.resx">
+      <DependentUpon>202202202259461_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

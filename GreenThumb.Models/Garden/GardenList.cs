@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.Garden
+namespace GreenThumb.Models
 {
     public class GardenList
     {
@@ -15,8 +15,9 @@ namespace GreenThumb.Models.Garden
         public Plants PlantType { get; set; }
         public int PlantCount { get; set; }
         public byte[] PlantPhoto { get; set; }
-        [Display(Name="Created")]
+        [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset ModifiedUtc { get; set; }
     }
 }
+

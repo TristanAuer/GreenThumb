@@ -1,4 +1,4 @@
-﻿using GreenThumb.Models.MessageBoard;
+﻿using GreenThumb.Models;
 using GreenThumb.Services;
 using Microsoft.AspNet.Identity;
 using System;

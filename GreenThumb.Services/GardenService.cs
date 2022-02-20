@@ -1,5 +1,5 @@
 ﻿using GreenThumb.Data;
-using GreenThumb.Models.Garden;
+using GreenThumb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace GreenThumb.Services
                     GardenName = model.GardenName,
                     PlantType = model.PlantType,
                     PlantCount = model.PlantCount,
-                    CreatedUtc = DateTimeOffset.Now,
+                    CreatedUtc = model.CreatedUtc
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -41,6 +41,7 @@ namespace GreenThumb.Services
                 var entity = ctx
                     .GardenTable
                     .Single(e => e.GardenId == model.GardenId);
+                entity.GardenId = model.GardenId;
                 entity.GardenName= model.GardenName;
                 entity.PlantType = model.PlantType;
                 entity.PlantCount = model.PlantCount;

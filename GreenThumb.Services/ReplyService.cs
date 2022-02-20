@@ -1,6 +1,5 @@
 ﻿using GreenThumb.Data;
-using GreenThumb.Models.ReplyMB;
-using GreenThumb.Models.ReplyMBmulti;
+using GreenThumb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

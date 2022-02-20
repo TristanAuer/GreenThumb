@@ -1,6 +1,5 @@
 ﻿
-using GreenThumb.Models.MessageBoard;
-using GreenThumb.Models.ReplyMB;
+using GreenThumb.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

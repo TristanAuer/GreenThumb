@@ -1,6 +1,4 @@
-﻿using GreenThumb.Models.MessageBoard;
-using GreenThumb.Models.ReplyMB;
-using GreenThumb.Models.ReplyMBmulti;
+﻿using GreenThumb.Models;
 using GreenThumb.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -22,8 +20,8 @@ namespace GreenThumb.WebMVC.Controllers
             var ReplyMBSvc = new ReplyService(Id);
             var MessageSvc = new MessageBoardService(Id);
             var model = new ReplyMBmulti();
-            model.RecentReply = (System.Collections.Generic.IEnumerable<GreenThumb.Models.ReplyMB.ReplyMBList>)(System.Collections.Generic.IEnumerable<ReplyMBList>)ReplyMBSvc.RecentReply();
-            model.GetCurrentMessage = (System.Collections.Generic.IEnumerable<GreenThumb.Models.MessageBoard.MessageBoardDetail>)(System.Collections.Generic.IEnumerable<MessageBoardDetail>)MessageSvc.GetCurrentMessage();
+            model.RecentReply = (System.Collections.Generic.IEnumerable<ReplyMBList>)ReplyMBSvc.RecentReply();
+            model.GetCurrentMessage = (System.Collections.Generic.IEnumerable<MessageBoardDetail>)MessageSvc.GetCurrentMessage();
 
             return View(model);
         }

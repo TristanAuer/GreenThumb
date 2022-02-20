@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.Garden
+namespace GreenThumb.Models
 {
     public class GardenEdit
     {
@@ -16,12 +16,11 @@ namespace GreenThumb.Models.Garden
         public string GardenName { get; set; }
         [Required]
         public int GardenId { get; set; }
-        
+
         public Plants PlantType { get; set; }
-        
+
         public byte[] PlantPhoto { get; set; }
         public int PlantCount { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
-        
     }
 }

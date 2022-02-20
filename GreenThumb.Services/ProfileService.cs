@@ -1,4 +1,5 @@
 ﻿using GreenThumb.Data;
+using GreenThumb.Models;
 using GreenThumb.Models.Profile;
 using System;
 using System.Collections.Generic;

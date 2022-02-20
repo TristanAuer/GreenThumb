@@ -6,11 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.MessageBoard
+namespace GreenThumb.Models
 {
     public class MessageBoardCreate
     {
-        
         [Required]
         [MaxLength(8000, ErrorMessage = "Max character count 8000.")]
         [Display(Name = "Content")]
@@ -22,7 +21,6 @@ namespace GreenThumb.Models.MessageBoard
         public string ThreadTitle { get; set; }
         [Display(Name = "Photo")]
         public byte[] ThreadPhoto { get; set; }
-        ///public React Content { get; set; }
-
+        public React Content { get; set; }
     }
 }

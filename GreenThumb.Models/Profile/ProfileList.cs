@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.Profile
+namespace GreenThumb.Models
 {
     public class ProfileList
     {

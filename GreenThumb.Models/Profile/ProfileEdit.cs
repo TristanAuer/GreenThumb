@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.Profile
+namespace GreenThumb.Models
 {
     public class ProfileEdit
     {
-
         public int ProfileId { get; set; }
 
         [Display(Name = "User Name")]

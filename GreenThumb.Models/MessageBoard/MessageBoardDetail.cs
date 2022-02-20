@@ -1,12 +1,11 @@
-﻿using GreenThumb.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.MessageBoard
+namespace GreenThumb.Models
 {
     public class MessageBoardDetail
     {
@@ -23,6 +22,5 @@ namespace GreenThumb.Models.MessageBoard
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Last Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
-
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.ReplyMBmulti
+namespace GreenThumb.Models
 {
     public class ReplyMBCreate
     {

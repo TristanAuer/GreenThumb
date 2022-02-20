@@ -1,12 +1,11 @@
-﻿using GreenThumb.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenThumb.Models.Profile
+namespace GreenThumb.Models
 {
     public class ProfileCreate
     {
@@ -18,6 +17,5 @@ namespace GreenThumb.Models.Profile
         public string GardenName { get; set; }
         public byte[] UserPhoto { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
-
     }
 }
