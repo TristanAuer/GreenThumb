@@ -1,72 +1,78 @@
-﻿@model IEnumerable<GreenThumb.Models.MessageBoardList>
+﻿@model IEnumerable<GreenThumb.Data.MessageBoard>
 
 @{
     ViewBag.Title = "Index";
 }
+<div class="jumbotron">
+    <h2>Index</h2>
 
-<h2>Index</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile.UserName)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.OwnerGUID)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ThreadContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThreadTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThreadPhoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReactionType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-    </div> 
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ThreadId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThreadTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThreadPhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThreadContent)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Profile.UserName)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.OwnerGUID)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThreadContent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThreadTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThreadPhoto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReactionType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ThreadId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ThreadId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ThreadId }) |
+                    @Html.ActionLink("Reply", "ReplyCreate", "Reply", new { id = item.ThreadId }, null)
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThreadId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThreadTitle)
-        </td>
-        <td>
-            @if (item.ThreadPhoto == null)
-            {
-                <img src="@item.ThreadPhoto" alt="" height=100 width=200 />
-            }
-            else
-            {
-                @Html.DisplayFor(modelItem => item.ThreadPhoto)
-            }
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThreadContent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ThreadId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ThreadId })  |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ThreadId })
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+</div>

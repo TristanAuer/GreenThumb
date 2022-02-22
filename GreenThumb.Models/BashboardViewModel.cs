@@ -7,6 +7,5 @@ using System.Threading.Tasks;
 namespace GreenThumb.Models
 {
     //class BashboardViewModel
-    //{
-    //}
+    
 }

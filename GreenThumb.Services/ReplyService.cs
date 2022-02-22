@@ -21,6 +21,8 @@ namespace GreenThumb.Services
             var entity =
                 new ReplyMB()
                 {
+                    OwnerGUID = _userId,
+                    ThreadId = model.ThreadId,
                     Reply = model.Reply,
                     ReplyPhoto = model.ReplyPhoto,
                     CreatedUtc = DateTimeOffset.Now,

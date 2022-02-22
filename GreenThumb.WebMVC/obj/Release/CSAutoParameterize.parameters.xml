@@ -3,4 +3,10 @@
   <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:greenthumbwebmvcdbserver.database.windows.net,1433;Initial Catalog=GreenThumb.WebMVC_db;User Id=tristaue@greenthumbwebmvcdbserver;Password=@fHr6F@eS*18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\Tristan\\source\\repos\\GreenThumb\.WebMVC\\GreenThumb\.WebMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
+  <parameter name="GreenThumb.Data.ApplicationDbContext-Web.config Connection String" description="GreenThumb.Data.ApplicationDbContext Connection String used in web.config by the application to access the database." defaultValue="GreenThumb.Data.ApplicationDbContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tristan\\source\\repos\\GreenThumb\.WebMVC\\GreenThumb\.WebMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GreenThumb.Data.ApplicationDbContext']/@connectionString" />
+  </parameter>
+  <parameter name="GreenThumb.Data.ApplicationDbContext_DatabasePublish-Web.config Connection String" description="GreenThumb.Data.ApplicationDbContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="GreenThumb.Data.ApplicationDbContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tristan\\source\\repos\\GreenThumb\.WebMVC\\GreenThumb\.WebMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GreenThumb.Data.ApplicationDbContext_DatabasePublish']/@connectionString" />
+  </parameter>
 </parameters>

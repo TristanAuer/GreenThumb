@@ -38,7 +38,7 @@ namespace GreenThumb.Data
         [Display(Name = "Modified")]
         public DateTimeOffset ModifiedUtc { get; set; }
 
-        public virtual ICollection<ReplyMB> Reply { get; set; }
+        public virtual ICollection<ReplyMB> Reply { get; set; } = new List<ReplyMB>();
 
         [ForeignKey(nameof(Profile))]
         public int? UserId { get; set; }

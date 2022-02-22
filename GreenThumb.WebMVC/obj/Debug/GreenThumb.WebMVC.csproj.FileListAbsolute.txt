@@ -1,3 +1,5 @@
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.AssemblyReference.cache
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.CoreCompileInputs.cache
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.WebMVC.dll.config
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.WebMVC.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.WebMVC.pdb
@@ -60,6 +62,8 @@ C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Owin.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Owin.Security.Cookies.dll
@@ -85,6 +89,8 @@ C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\GreenThumb.Services.pdb
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\EntityFramework.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\System.Web.Helpers.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\System.Web.Mvc.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\System.Web.Optimization.xml
@@ -107,8 +113,6 @@ C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.AssemblyReference.cache
-C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.CoreCompileInputs.cache
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.csproj.CopyComplete
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.dll
 C:\Users\Tristan\source\repos\GreenThumb.WebMVC\GreenThumb.WebMVC\obj\Debug\GreenThumb.WebMVC.pdb

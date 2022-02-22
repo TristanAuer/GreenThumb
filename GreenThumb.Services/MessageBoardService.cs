@@ -34,7 +34,7 @@ namespace GreenThumb.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        
+
 
         //UpdateMessageboard
         public bool UpdateMessageBoard(MessageBoardEdit model)
@@ -55,34 +55,33 @@ namespace GreenThumb.Services
             }
         }
 
-        //Get Messages
-        public IEnumerable<MessageBoardList> GetMessages()
+        //public bool CreateProfile(ProfileCreate model)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+
+        //Get Current messages
+        public IEnumerable<MessageBoardList> GetCurrentMessage()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
-                        .MessageBoard
-                        .Select(
-                            e =>
-                            new MessageBoardList
-                            {
-                                ThreadId = e.ThreadId,
-                                ThreadTitle = e.ThreadTitle,
-                                ThreadContent = e.ThreadContent,
-                                ThreadPhoto = e.ThreadPhoto,
-                                //Content = e.Content,
-                                CreatedUtc = e.CreatedUtc,
 
-                            }
-                        );
+                var query = ctx
+                    .MessageBoard
+                    .Where(e => e.OwnerGUID == _userId)
+                    .OrderBy(p => p.CreatedUtc)
+                    .Select(
+                      e =>
+                    new MessageBoardList
+                    {
+                        ThreadId = e.ThreadId,
+                        ThreadTitle = e.ThreadTitle,
+                        ThreadContent = e.ThreadContent,
+                        //ThreadPhoto = (entity.ThreadPhoto == null || entity.ThreadPhoto.Length ==0) ? CreateImagemodel() 
+                    });
                 return query.ToArray();
             }
-        }
-        //Get Current messages
-        public MessageBoardDetail GetCurrentMessage()
-        {
-            return GetByThreadGUID(_userId);
         }
 
         public MessageBoardDetail GetByThreadGUID(Guid guid)
@@ -149,6 +148,29 @@ namespace GreenThumb.Services
             }
         }
 
+        public IEnumerable<MessageBoardList> GetMessages()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .MessageBoard
+                        .Select(
+                            e =>
+                            new MessageBoardList
+                            {
+                                ThreadId = e.ThreadId,
+                                ThreadTitle = e.ThreadTitle,
+                                ThreadContent = e.ThreadContent,
+                                ThreadPhoto = e.ThreadPhoto,
+                                //Content = e.Content,
+                                CreatedUtc = e.CreatedUtc,
+
+                            }
+                        );
+                return query.ToArray();
+            }
+        }
 
 
         //public IEnumerable<MessageBoardList> GetThreadSearchString(string input)

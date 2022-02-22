@@ -6,14 +6,18 @@
     <title>@ViewBag.Title - Project Green Thumb</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style> body {background-color: forestgreen}
+            
+    </style>
+    
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar active"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
@@ -25,23 +29,32 @@
                     <li>@Html.ActionLink("Message Board", "Index", "MessageBoard")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Profile", "Index", "Profile")</li>
+                        <li>@Html.ActionLink("Profile", "ProfileIndex", "Profile")</li>
                         <li>@Html.ActionLink("Garden", "Index", "Garden")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - GreenThumb</p>
-        </footer>
+    <div class="container">
+        <div style="margin: 10px">
+            <h1>Green Thumb</h1>
+        </div>
     </div>
+    <div class="container body-content">
+        
+            <div class="jumbotron">
+                @RenderBody()
+            </div>
+        
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - GreenThumb</p>
+            </footer>
+        </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

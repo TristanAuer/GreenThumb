@@ -1,4 +1,5 @@
-﻿using GreenThumb.Models;
+﻿using GreenThumb.Data;
+using GreenThumb.Models;
 using GreenThumb.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -13,22 +14,25 @@ namespace GreenThumb.WebMVC.Controllers
 
     public class MessageBoardController : Controller
     {
-
         public ActionResult Index()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                var userId = Guid.Parse(User.Identity.GetUserId());
-                var service = new MessageBoardService(userId);
-                var model = service.GetMessages();
-                return View(model);
-            }
-            else
-            {
-                var model = new MessageBoardList[0];
-                return View(model);
-            }
+            ApplicationDbContext db = new ApplicationDbContext();
+            List<MessageBoard> ListMessage = db.MessageBoard.ToList();
+            db.Dispose();
+            return View(ListMessage);
         }
+        //public ActionResult Index()
+        //{
+        //    var model = new MessageBoardList [0];
+        //    return View(model);
+
+
+        //}
+
+        //private readonly UserManager<ApplicatioUser> userManager;
+
+
+
         // GET: MessageBoard
         [Authorize]
         public ActionResult Create()
@@ -150,10 +154,11 @@ namespace GreenThumb.WebMVC.Controllers
         private MessageBoardService CreateMessageBoardService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new MessageBoardService(userId);
+            var service = new MessageBoardService (userId);
             return service;
         }
-
+        
+        
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]

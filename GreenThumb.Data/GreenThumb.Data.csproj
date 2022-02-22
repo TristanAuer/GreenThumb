@@ -45,9 +45,13 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Images.cs" />
     <Compile Include="MessageBoard.cs" />
-    <Compile Include="Migrations\202202202259461_init.cs" />
-    <Compile Include="Migrations\202202202259461_init.Designer.cs">
-      <DependentUpon>202202202259461_init.cs</DependentUpon>
+    <Compile Include="Migrations\202202220114300_init.cs" />
+    <Compile Include="Migrations\202202220114300_init.Designer.cs">
+      <DependentUpon>202202220114300_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202220329059_profile.cs" />
+    <Compile Include="Migrations\202202220329059_profile.Designer.cs">
+      <DependentUpon>202202220329059_profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Profile.cs" />
@@ -63,8 +67,11 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202202259461_init.resx">
-      <DependentUpon>202202202259461_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202220114300_init.resx">
+      <DependentUpon>202202220114300_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202220329059_profile.resx">
+      <DependentUpon>202202220329059_profile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

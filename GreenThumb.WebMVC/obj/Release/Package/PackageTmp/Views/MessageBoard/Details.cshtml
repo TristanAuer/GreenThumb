@@ -1,4 +1,4 @@
-﻿@model GreenThumb.Models.MessageBoard.MessageBoardDetail
+﻿@model GreenThumb.Models.MessageBoardDetail
 
 @{
     ViewBag.Title = "Details";
@@ -66,7 +66,8 @@
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ThreadId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "ProfileIndex")
+    @Html.ActionLink("Create Reply", "CreateReply", new { id = Model.ThreadId }))
 </p>
 
 

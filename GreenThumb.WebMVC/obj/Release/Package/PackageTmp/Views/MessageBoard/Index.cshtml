@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GreenThumb.Models.MessageBoard.MessageBoardList>
+﻿@model IEnumerable<GreenThumb.Models.MessageBoardList>
 
 @{
     ViewBag.Title = "Index";
@@ -62,9 +62,7 @@
             @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ThreadId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ThreadId })  |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ThreadId })
+            @Html.ActionLink("ReplyCreate", "ReplyCreate", new { id = item.ThreadId }) |
         </td>
     </tr>
 }

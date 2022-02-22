@@ -1,0 +1,66 @@
+﻿@model IEnumerable<GreenThumb.Models.MessageBoardList>
+
+@{
+    ViewBag.Title = "ProfileIndex";
+}
+<div class="jumbotron">
+    <h2>ProfileIndex</h2>
+
+    <p>
+
+        @Html.ActionLink("Profile Create", "Create", "Profile")
+    </p>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ThreadId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThreadTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThreadContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThreadId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThreadTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThreadContent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "MessageBoard", new { id = item.ThreadId }) |
+                    @Html.ActionLink("Details", "Details", "MessageBoard", new { id = item.ThreadId }) |
+                    @Html.ActionLink("Delete", "Delete", "MessageBoard", new { id = item.ThreadId }) |
+                    @Html.ActionLink("Reply", "ReplyCreate", "Reply", new { id = item.ThreadId })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

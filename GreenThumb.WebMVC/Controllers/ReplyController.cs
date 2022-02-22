@@ -9,11 +9,6 @@ namespace GreenThumb.WebMVC.Controllers
     public class ReplyController : Controller
     {
         // GET: Reply
-        [Authorize]
-        public ActionResult CreateReply()
-        {
-            return View();
-        }
 
         public ActionResult UserMessagesListReply(Guid Id)
         {
@@ -31,6 +26,12 @@ namespace GreenThumb.WebMVC.Controllers
 
 
         //}
+        [Authorize]
+        public ActionResult CreateReply()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateReply(ReplyMBCreate model)
@@ -43,7 +44,7 @@ namespace GreenThumb.WebMVC.Controllers
             if (service.CreateReply(model))
             {
                 TempData["SaveResult"] = "Your Reply was Created.";
-                return RedirectToAction("Index Reply");
+                return RedirectToAction("Index");
             }
             ModelState.AddModelError("", "your reply cannot be added to Message Board.");
             return View(model);
